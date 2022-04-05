@@ -176,7 +176,7 @@ print()
 print("Testing function 'nested_sum'.")
 
 print('Test for t = [[1,4],[3,8,3],[1],[2,-5]]. Expect a result of 17.')
-print('Result is', nested_sum())
+print('Result is', nested_sum([[1, 4], [3, 8, 3], [1], [2, -5]]))
 
 
 ## Problem 6
