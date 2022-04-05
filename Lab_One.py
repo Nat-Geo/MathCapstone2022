@@ -1,24 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr  4 10:16:58 2022
-
-@author: Nathaniel Gunter
+Lab 1
+Due 12 Apr 2022
+Nathaniel Gunter
 """
 
-
-## Lab 1
-# Due 12 Apr 2022
-
-## Problem 1
-# Fermat's Last Theorem says that there are no positive integers a, b, and c
-#   such that a^n + b^n = c^n for any n greater than 2. Write a function named
-#   'check_fermat(a,b,c,n)' that takes four integer parameters and returns the
-#   following: 
-#   a) None - if n is not greater than 2
-#   b) True - if the equation is not satisfied and n is greater than 2
-#   c) False - if the equation is satisfied
-#   Try your function for different values of the parameters to make sure it
-#   works properly.
+"""
+Problem 1
+Fermat's Last Theorem says that there are no positive integers a, b, and c
+  such that a^n + b^n = c^n for any n greater than 2. Write a function named
+  'check_fermat(a,b,c,n)' that takes four integer parameters and returns the
+  following: 
+  a) None - if n is not greater than 2
+  b) True - if the equation is not satisfied and n is greater than 2
+  c) False - if the equation is satisfied
+  Try your function for different values of the parameters to make sure it
+  works properly.
+"""
 
 
 def check_fermat(a, b, c, n):
@@ -43,19 +41,21 @@ print('Result is', check_fermat(1, 2, 3, 3))
 
 print("There should be no case for which this function returns False, assuming that Fermat's Last Theorem is true.")
 
+"""
+Problem 2
+Write a function named 'is_triangle' that takes three real numbers x, y, and
+  z representing the lengths of three line segments. The function returns
+  True if the line segments can form a triangle and False otherwise.
+  Try your function for different values of the parameters to make sure it 
+  works properly.
 
-## Problem 2
-# Write a function named 'is_triangle' that takes three real numbers x, y, and
-#   z representing the lengths of three line segments. The function returns
-#   True if the line segments can form a triangle and False otherwise.
-#   Try your function for different values of the parameters to make sure it 
-#   works properly.
+To have a valid triangle, the sum of any two sides must be greater than
+  the third for all possible combinations. That is, we must have:
+a + b > c
+a + c > b
+and b + c > a
+"""
 
-# To have a valid triangle, the sum of any two sides must be greater than
-#   the third for all possible combinations. That is, we must have:
-# a + b > c
-# a + c > b
-# and b + c > a
 
 def is_triangle(x, y, z):
     # Each inequality gives a boolean result. By combining the inequalities
@@ -74,10 +74,12 @@ print('Result is', is_triangle(7, 5, 10))
 print('Test for x=5, y = 3, z = 8. Expect False.')
 print('Result is', is_triangle(5, 3, 8))
 
+"""
+Problem 3
+Write a function that takes a real parameter x and prints the values x, x-1,
+  x-2, ... , x-i, ... that are positive. Use the while loop.
+"""
 
-## Problem 3
-# Write a function that takes a real parameter x and prints the values x, x-1,
-#   x-2, ... , x-i, ... that are positive. Use the while loop.
 
 def print_decreasing_x(x):
     # First, check that x is positive to begin with
@@ -111,16 +113,18 @@ print_decreasing_x(5)
 print('Test for a float x = 5.5. Expect to cut at 0.5.')
 print_decreasing_x(5.5)
 
+"""
+Problem 4
+One way of computing square roots is Newton's method. Suppose that you want
+  to know the square root of a. If you start with almost any estimate x0, 
+  you can compute a better estimate using the following iterative formula:
+  x_(n+1) = (x_n+(a/x_n))/2
+  Write a function which takes two parameters a and x0. This function should
+  iterate the above formula until x_(n+1) = x_n for the first time, then
+  returns the value of n and x_n.
+  Run your function for a = 2 and x0 = 6 to make sure that it works properly.
+"""
 
-## Problem 4
-# One way of computing square roots is Newton's method. Suppose that you want
-#   to know the square root of a. If you start with almost any estimate x0, 
-#   you can compute a better estimate using the following iterative formula:
-#   x_(n+1) = (x_n+(a/x_n))/2
-#   Write a function which takes two parameters a and x0. This function should
-#   iterate the above formula until x_(n+1) = x_n for the first time, then
-#   returns the value of n and x_n.
-#   Run your function for a = 2 and x0 = 6 to make sure that it works properly.
 
 def newton_sqrt(a, x0):
     # Set an iterating variable x_n equal to the starting value
@@ -150,11 +154,13 @@ print('In', res_newt[0], 'iterations, converged on a value of', res_newt[1])
 
 print('This value matches the square root of 2.')
 
+"""
+Problem 5
+Write a function called 'nested_sum' that takes a list of lists of integers
+  and adds up the elements from all the nested lists. Test your function
+  on t = [[1,4],[3,8,3],[1],[2,-5]].
+"""
 
-## Problem 5
-# Write a function called 'nested_sum' that takes a list of lists of integers
-#   and adds up the elements from all the nested lists. Test your function
-#   on t = [[1,4],[3,8,3],[1],[2,-5]].
 
 def nested_sum(l):
     s = 0
@@ -178,11 +184,13 @@ print("Testing function 'nested_sum'.")
 print('Test for t = [[1,4],[3,8,3],[1],[2,-5]]. Expect a result of 17.')
 print('Result is', nested_sum([[1, 4], [3, 8, 3], [1], [2, -5]]))
 
+"""
+Problem 6
+Write a function called 'middle' that takes a list and returns a new list
+  that contains all but the first and last elements. Try your function for
+  different lists to make sure it works properly.
+"""
 
-## Problem 6
-# Write a function called 'middle' that takes a list and returns a new list
-#   that contains all but the first and last elements. Try your function for
-#   different lists to make sure it works properly.
 
 def middle(l):
     # Check to see if the input is a list or not
@@ -215,11 +223,13 @@ print('Result is', middle(['apple', 'orange', 'banana']))
 print("Test for t = [1, 3, 2, 5, 4]")
 print('Result is', middle([1, 3, 2, 5, 4]))
 
+"""
+Problem 7
+Write a function called 'chop' that takes a list, modifies it by removing
+  the first and last elements, and returns None. Try your function for
+  different lists to make sure it works properly.
+"""
 
-## Problem 7
-# Write a function called 'chop' that takes a list, modifies it by removing
-#   the first and last elements, and returns None. Try your function for
-#   different lists to make sure it works properly.
 
 def chop(l):
     # Check to see if the input is a list or not
