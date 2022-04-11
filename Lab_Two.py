@@ -5,6 +5,9 @@ Due April 19
 Nathaniel Gunter
 """
 
+# Handle any necessary imports
+import numpy as np
+
 """
 Problem 1
 
@@ -13,6 +16,36 @@ pattern of ones and zeros. The value at the position (0,0) is 1.
 
 Test your function for n = 3,4,10,15
 """
+
+
+def checkerboard(n):
+    # Define an empty matrix of the correct size
+    mat = np.zeros((n, n))
+
+    # Scan through the array, and where i+j is even, replace the zero with a one. This creates the checkerboard pattern
+    #   with a one at (0,0).
+    for i in range(0, n):
+        for j in range(0, n):
+            if (i + j) % 2 == 0:
+                mat[i, j] = 1
+
+    return mat
+
+
+# Test code
+print("Testing 'checkerboard()'.")
+
+print("Testing for n = 3.")
+print("Function returns:\n", checkerboard(3))
+
+print("Testing for n = 4.")
+print("Function returns:\n", checkerboard(4))
+
+print("Testing for n = 10.")
+print("Function returns:\n", checkerboard(10))
+
+print("Testing for n = 15.")
+print("Function returns:\n", checkerboard(15))
 
 """
 Problem 2
@@ -56,7 +89,8 @@ You should get the following output  unique_elements = [10, 20, 30, 40, 50] and 
 """
 Problem 6
 
-Write a function that takes two one dimensional NumPy arrays and returns their Cartesian product in a single two dimensional NumPy array.
+Write a function that takes two one dimensional NumPy arrays and returns their Cartesian product in a single two 
+dimensional NumPy array.
 
 Test your function using x  = [1,2,3] and y = [4,5].
 """
@@ -64,7 +98,8 @@ Test your function using x  = [1,2,3] and y = [4,5].
 """
 Problem 7
 
-Write a function that takes a two dimensional NumPy array A and returns two one dimensional NumPy arrays that contain the first and fourth column of A.
+Write a function that takes a two dimensional NumPy array A and returns two one dimensional NumPy arrays that contain 
+the first and fourth column of A.
 
 Test your function using a randomly generated 4 by 4 NumPy array (matrix).
 """
@@ -72,7 +107,8 @@ Test your function using a randomly generated 4 by 4 NumPy array (matrix).
 """
 Problem 8
 
-Write a function that takes a NumPy array A and two real numbers min_value and  max_value. The function returns the values of A that are larger than min_value and smaller than max_value.
+Write a function that takes a NumPy array A and two real numbers min_value and  max_value. The function returns the 
+values of A that are larger than min_value and smaller than max_value.
 
 Test your function using A = [1, 3, 4, 5, 6, 7, 12, 16, 18, 32, 53],  min_value = 10 and max_value = 30.
 """
@@ -80,7 +116,9 @@ Test your function using A = [1, 3, 4, 5, 6, 7, 12, 16, 18, 32, 53],  min_value 
 """
 Problem 9
 
-Write a function that takes a one dimensional  NumPy array A. If the number of the elements in A is not a multiple of 3 then the function  returns False. Otherwise the function returns a new array which icontains averages of every consecutive triplet of elements in a given array. 
+Write a function that takes a one dimensional  NumPy array A. If the number of the elements in A is not a multiple of 3 
+then the function  returns False. Otherwise the function returns a new array which contains averages of every 
+consecutive triplet of elements in a given array. 
 
 Test your function using A = [ 1 2 3 2 4 6 1 2 12 0 -12 6]
 """
@@ -88,7 +126,8 @@ Test your function using A = [ 1 2 3 2 4 6 1 2 12 0 -12 6]
 """
 Problem 10
 
-Write a function that takes a two dimensional NumPy array (matrix) A and one dimensional NumPy array (vector) b. It returns a one dimensional array obtained by multiplying the matrix A by the vector b.
+Write a function that takes a two dimensional NumPy array (matrix) A and one dimensional NumPy array (vector) b. 
+It returns a one dimensional array obtained by multiplying the matrix A by the vector b.
 
 Test your function.
 """
@@ -96,12 +135,15 @@ Test your function.
 """
 Problem 11
 
-Use the Iris data set (posted on canvas).  Find the maximum, minimum and mean of the petal and sepal lengths for each of three species of Iris.
+Use the Iris data set (posted on canvas).  Find the maximum, minimum and mean of the petal and sepal lengths for each 
+of three species of Iris.
 """
 
 """
 Problem 12
 
-Use the Iris data set (posted on canvas). Create a scatter plot of the sepal length and sepal width. Make sure that your plot contains a legend, axis labels and legend. Data points for each of the three species should be displayed using  different color. Is there a simple relation between sepal length and sepal width that is approximately valid for all specimens?
+Use the Iris data set (posted on canvas). Create a scatter plot of the sepal length and sepal width. Make sure that 
+your plot contains a legend, axis labels and legend. Data points for each of the three species should be displayed 
+using  different color. Is there a simple relation between sepal length and sepal width that is approximately valid for 
+all specimens?
 """
-
