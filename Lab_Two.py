@@ -58,9 +58,12 @@ Test your function on a NumPY array with the values [1, 3.4, 75.5, 100.3, -35.2]
 
 
 def cent_to_faren(temps):
+    # Define an empty array of the same size as the input
     ftemps = np.zeros(len(temps))
+    # For every value in the input array, assign the same index in the output array with the converted value
     for i in range(len(temps)):
         ftemps[i] = (temps[i] * 9 / 5) + 32
+    # Return the output array
     return ftemps
 
 
@@ -77,6 +80,30 @@ of the input arrays.
 
 Test your function on NumPy arrays array1 = [1, 10, 1, 20, 4, 30, 8, 70] and array2 = [20, 10, 3, -4, 70, 80]
 """
+
+
+def commonality(a1, a2):
+    # Figure out which array is shorter. This might not make a difference for arrays this size, but for large lists it
+    #   could be useful.
+
+    # Define an empty array to return
+    res = np.empty(0)
+    if len(a1) < len(a2):
+        # For every value in the shorter array, check if it is in the longer array. If so, add it to the result
+        for i in range(len(a1)):
+            if a1[i] in a2:
+                res = np.append(res, a1[i])
+    else:
+        for i in range(len(a2)):
+            if a2[i] in a1:
+                res = np.append(res, a2[i])
+    return res
+
+
+# Test code
+print("\n Testing 'commonality()'")
+print("Testing for a1 = [1, 10, 1, 20, 4, 30, 8, 70] and a2 = [20, 10, 3, -4, 70, 80]. Expect a result of [20, 10, 70]")
+print("Result is: \n", commonality([1, 10, 1, 20, 4, 30, 8, 70], [20, 10, 3, -4, 70, 80]))
 
 """
 Problem 4
