@@ -56,6 +56,19 @@ Centigrade degrees and returns an array with the corresponding temperatures in F
 Test your function on a NumPY array with the values [1, 3.4, 75.5, 100.3, -35.2]
 """
 
+
+def cent_to_faren(temps):
+    ftemps = np.zeros(len(temps))
+    for i in range(len(temps)):
+        ftemps[i] = (temps[i] * 9 / 5) + 32
+    return ftemps
+
+
+# Test code
+print("\n Testing 'cent_to_faren()'")
+print("Testing for l = [1, 3.4, 75.5, 100.3, -35.2].")
+print("Result is: \n", cent_to_faren([1, 3.4, 75.5, 100.3, -35.2]))
+
 """
 Problem 3
 
