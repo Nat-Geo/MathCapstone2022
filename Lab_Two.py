@@ -114,6 +114,27 @@ values and indices of the elements  of A that are bigger than t.
 Test your function on the matrix  A  = [[0, 10, 20], [20, 30, 40]] and t = 10
 """
 
+
+def above_threshold_val(mat, t):
+    # Start by defining empty lists, that will eventually be returned
+    vals = []
+    indices = []
+
+    # Now iterate through the matrix A, checking the value to see if it is larger than the threshold. If it is,
+    #   append it to the lists that we return at the end of the function
+    for i in range(mat.shape[0]):
+        for j in range(mat.shape[1]):
+            if mat[i, j] > t:
+                vals.append(mat[i, j])
+                indices.append((i, j))
+    return vals, indices
+
+# Test code
+print("\n Testing 'above_threshold_val()'")
+print("Testing for A = [[0, 10, 20], [20, 30, 40]] and t = 10")
+mat = np.array([[0,10,20],[20,30,40]])
+print("Result is: \n", above_threshold_val(mat, 10))
+
 """
 Problem 5
 
